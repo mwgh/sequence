@@ -14,7 +14,7 @@ void basicTest() {
     sq1.insert(numbers, n);
     sq1.print();
 
-    int pies = sq1.find(3.14);
+    int pies = sq1.count(3.14);
     cout << "pies = " << pies << endl;
     int sqSize = sq1.size();
     cout << "sqSize = " << sqSize << endl;
@@ -89,6 +89,16 @@ void eraseTest() {
     sq1.print();
     sq1.erase(0);
     sq1.print();
+
+    sq1.insert(numbers, n);
+    sq1.print();
+    int i = sq1.index_of(numbers[2]);
+    if (i != -1) {
+        sq1.erase(i);
+        cout << "We erased the item with the index " << i
+                << " from the sequence." << endl;
+        sq1.print();
+    }
 }
 
 int main() {

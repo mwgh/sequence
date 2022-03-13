@@ -96,7 +96,7 @@ void Sequence::erase(int index) {
     currSize--;
 }
 
-int Sequence::find(double element) {
+int Sequence::count(double element) {
     int count = 0;
     for (int i = 0; i < currSize; i++) {
         if (arr[i] == element) {
@@ -105,6 +105,16 @@ int Sequence::find(double element) {
     }
 
     return count;
+}
+
+int Sequence::index_of(double element) {
+    for (int i = 0; i < currSize; i++) {
+        if (arr[i] == element) {
+            return i;
+        }
+    }
+
+    return -1;
 }
 
 int Sequence::size() {
