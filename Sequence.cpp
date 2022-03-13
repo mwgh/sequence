@@ -102,9 +102,8 @@ double Sequence::median() {
 
     if (currSize % 2 != 0) {
         return arr[middle];
-    } else {
-        return (arr[middle - 1] + arr[middle]) / 2;
     }
+    return (arr[middle - 1] + arr[middle]) / 2;
 }
 
 double Sequence::stddev() {
