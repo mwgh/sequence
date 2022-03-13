@@ -55,35 +55,23 @@ void equalityTest()
     sq2.print();
 
     cout << "sq1 == sq2 ? " << (sq1 == sq2) << endl;
-    sq1.insert(10.1);
+    cout << "sq1 != sq2 ? " << (sq1 != sq2) << endl;
+
+    double num = 10.1;
+    sq1.insert(num);
+    cout << "inserted " << num << " into sq1" << endl;
+
     cout << "sq1 == sq2 ? " << (sq1 == sq2) << endl;
+    cout << "sq1 != sq2 ? " << (sq1 != sq2) << endl;
+
     cout << "sq2 == sq2 ? " << (sq2 == sq2) << endl;
+    cout << "sq2 != sq2 ? " << (sq2 != sq2) << endl;
  
     cout << "end equality test" << endl;
 }
 
-void inequalityTest()
-{
-    Sequence sq1;
-    double numbers[] = {3.14,1.1,2.2,3.3};
-    int n = 4;
-
-    sq1.insert(numbers, n);
-    Sequence sq2 = sq1;
-    sq1.print();
-    sq2.print();
-
-    cout << "sq1 != sq2 ? " << (sq1 != sq2) << endl;
-    sq2.insert(10.1);
-    cout << "sq1 != sq2 ? " << (sq1 != sq2) << endl;
-    cout << "sq2 != sq2 ? " << (sq2 != sq2) << endl;
- 
-    cout << "end inequality test" << endl;
-}
 int main() {
     basicTest();
     cout << endl;
     equalityTest();
-    cout << endl;
-    inequalityTest();
 }
