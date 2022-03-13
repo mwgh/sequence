@@ -17,6 +17,7 @@ class Sequence {
 
      void insert(double element);
      void insert(double elements[], int size);
+     void erase(int index);
      int find(double element);
      int size();
      double sum();

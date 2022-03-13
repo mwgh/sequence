@@ -68,8 +68,33 @@ void equalityTest() {
     cout << "end equality test" << endl;
 }
 
+void eraseTest() {
+    Sequence sq1;
+    double numbers[] = {1.1, 2.2, 3.3};
+    int n = 3;
+
+    sq1.insert(numbers, n);
+    sq1.print(); // 1.1 2.2 3.3
+    sq1.erase(1);
+    sq1.print(); // 1.1 3.3
+    sq1.erase(1);
+    sq1.print(); // 1.1
+    sq1.erase(0);
+    sq1.print();
+
+    sq1.insert(10.1);
+    sq1.erase(1);
+    sq1.print();
+    sq1.erase(0);
+    sq1.print();
+    sq1.erase(0);
+    sq1.print();
+}
+
 int main() {
     basicTest();
     cout << endl;
     equalityTest();
+    cout << endl;
+    eraseTest();
 }

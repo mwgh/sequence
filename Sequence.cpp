@@ -84,6 +84,18 @@ void Sequence::insert(double elements[], int size) {
     }
 }
 
+void Sequence::erase(int index) {
+    if (index < 0 || index >= currSize) {
+        std::cerr << "We cannot erase the item because the index " << index
+                << " is out of bounds." << std::endl;
+        return;
+    }
+    for (int i = index; i < currSize - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    currSize--;
+}
+
 int Sequence::find(double element) {
     int count = 0;
     for (int i = 0; i < currSize; i++) {
