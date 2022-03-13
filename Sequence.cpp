@@ -24,7 +24,7 @@ Sequence::~Sequence() {
 }
 
 Sequence& Sequence::operator=(const Sequence& seq) {
-    if (&seq == this) {
+    if (this == &seq) {
         return *this;
     }
     *this = Sequence(seq);
@@ -32,7 +32,7 @@ Sequence& Sequence::operator=(const Sequence& seq) {
 }
 
 bool Sequence::operator==(const Sequence& seq) const {
-    if (&seq == this) {
+    if (this == &seq) {
         return true;
     }
     for (int i = 0; i < std::max(currSize, seq.currSize); i++) {
@@ -44,7 +44,7 @@ bool Sequence::operator==(const Sequence& seq) const {
 }
 
 bool Sequence::operator!=(const Sequence& seq) const {
-    return !(seq == *this);
+    return !(*this == seq);
 }
 
 void Sequence::insert(double element) {

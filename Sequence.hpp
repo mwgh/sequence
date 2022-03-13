@@ -9,8 +9,8 @@ public:
     Sequence(const Sequence& seq);
     ~Sequence();
     Sequence& operator=(const Sequence& seq);
-    // bool operator==(const Sequence& seq) const;
-    // bool operator!=(const Sequence& seq) const;
+    bool operator==(const Sequence& seq) const;
+    bool operator!=(const Sequence& seq) const;
 
     void insert(double element);
     void insert(double elements[], int size);
