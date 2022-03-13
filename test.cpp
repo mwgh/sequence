@@ -1,20 +1,19 @@
-#include "Sequence.hpp"
 #include <iostream>
+#include "Sequence.hpp"
 
 using std::cout;
 using std::endl;
 
-void basicTest()
-{
+void basicTest() {
     Sequence sq1;
-    double numbers[] = { 1.1,2.2,3.3 };
+    double numbers[] = {1.1, 2.2, 3.3};
     int n = 3;
- 
+
     sq1.insert(3.14);
     sq1.print();
     sq1.insert(numbers, n);
     sq1.print();
- 
+
     int pies = sq1.find(3.14);
     cout << "pies = " << pies << endl;
     int sqSize = sq1.size();
@@ -27,7 +26,7 @@ void basicTest()
     cout << "sqMedian = " << sqMedian << endl;
     double sqStddev = sq1.stddev();
     cout << "sqStddev = " << sqStddev << endl;
- 
+
     Sequence sq2(sq1);
     Sequence sq3 = sq2.concatenate(sq1);
     sq2.insert(100);
@@ -39,14 +38,13 @@ void basicTest()
     sq1.insert(10.1);
     sq1.print();
     sq4.print();
- 
+
     cout << "end basic test" << endl;
 }
 
-void equalityTest()
-{
+void equalityTest() {
     Sequence sq1;
-    double numbers[] = {3.14,1.1,2.2,3.3};
+    double numbers[] = {3.14, 1.1, 2.2, 3.3};
     int n = 4;
 
     sq1.insert(numbers, n);
@@ -66,7 +64,7 @@ void equalityTest()
 
     cout << "sq2 == sq2 ? " << (sq2 == sq2) << endl;
     cout << "sq2 != sq2 ? " << (sq2 != sq2) << endl;
- 
+
     cout << "end equality test" << endl;
 }
 

@@ -51,7 +51,7 @@ void Sequence::insert(double element) {
     if (currSize == maxSize) {
         maxSize *= 2;
         double* newArr = new double[maxSize];
-        
+
         for (int i = 0; i < currSize; i++) {
             newArr[i] = arr[i];
         }
@@ -69,7 +69,7 @@ void Sequence::insert(double elements[], int size) {
     if (newCurrSize >= maxSize) {
         maxSize = newCurrSize;
         double* newArr = new double[maxSize];
-        
+
         for (int i = 0; i < currSize; i++) {
             newArr[i] = arr[i];
         }
@@ -114,7 +114,7 @@ double Sequence::mean() {
 
 double Sequence::median() {
     std::sort(arr, arr + currSize);
-    int middle = (int) currSize / 2;
+    int middle = currSize / 2;
 
     if (currSize % 2 != 0) {
         return arr[middle];
