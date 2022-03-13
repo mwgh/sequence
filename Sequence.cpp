@@ -31,6 +31,22 @@ Sequence& Sequence::operator=(const Sequence& seq) {
     return *this;
 }
 
+bool Sequence::operator==(const Sequence& seq) const {
+    if (&seq == this) {
+        return true;
+    }
+    for (int i = 0; i < std::max(currSize, seq.currSize); i++) {
+        if (arr[i] != seq.arr[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool Sequence::operator!=(const Sequence& seq) const {
+    return !(seq == *this);
+}
+
 void Sequence::insert(double element) {
     if (currSize == maxSize) {
         maxSize *= 2;
