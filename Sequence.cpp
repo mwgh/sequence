@@ -118,10 +118,8 @@ double Sequence::stddev() {
 }
 
 Sequence Sequence::concatenate(const Sequence& seq) {
-    Sequence* newSeq = new Sequence();
-    newSeq->insert(arr, currSize);
-    newSeq->insert(seq.arr, seq.currSize);
-    return *newSeq;
+    insert(seq.arr, seq.currSize);
+    return *this;
 }
 
 void Sequence::print() {
