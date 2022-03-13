@@ -126,7 +126,7 @@ Sequence Sequence::concatenate(const Sequence& seq) {
 
 void Sequence::print() {
     std::cout << "Array: ";
-    for (int i = 0; i < maxSize; i++) {
+    for (int i = 0; i < currSize; i++) {
         std::cout << arr[i] << " ";
     }
     std::cout << std::endl;
