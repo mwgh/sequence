@@ -100,10 +100,11 @@ void Sequence::erase(int index) {
     for (int i = index; i < currSize - 1; i++) {
         arr[i] = arr[i + 1];
     }
+    currSize--;
+
     // Set the former last element in the sequence to 0 so that == and !=
     // do not have problems.
-    arr[currSize - 1] = 0;
-    currSize--;
+    arr[currSize] = 0;
 }
 
 void Sequence::erase(int start_index, int end_index) {
