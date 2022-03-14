@@ -100,6 +100,9 @@ void Sequence::erase(int index) {
     for (int i = index; i < currSize - 1; i++) {
         arr[i] = arr[i + 1];
     }
+    // Set the former last element in the sequence to 0 so that == and !=
+    // do not have problems.
+    arr[currSize - 1] = 0;
     currSize--;
 }
 
@@ -121,6 +124,12 @@ void Sequence::erase(int start_index, int end_index) {
         arr[i] = arr[i + 1];
     }
     currSize -= end_index - start_index;
+
+    // Set the remaining part of the array to 0 so that == and !=
+    // do not have problems.
+    for (int i = currSize; i < maxSize; i++) {
+        arr[i] = 0;
+    }
 }
 
 int Sequence::count(double element) {
@@ -183,12 +192,6 @@ double Sequence::stddev() {
 }
 
 Sequence Sequence::concatenate(const Sequence& seq) {
-    /*
-    Sequence* newSeq = new Sequence();
-    newSeq->insert(arr, currSize);
-    newSeq->insert(seq.arr, seq.currSize);
-    return *newSeq;
-    */
     insert(seq.arr, seq.currSize);
     return *this;
 }
