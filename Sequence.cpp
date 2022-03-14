@@ -107,13 +107,11 @@ void Sequence::erase(int start_index, int end_index) {
     if (start_index == end_index) {
         erase(start_index);
         return;
-    }
-    if (end_index < start_index) {
+    } else if (end_index < start_index) {
         std::cerr << "The end index should be greater than or equal to the "
                 << "start index." << std::endl;
         return;
-    }
-    if (!in_bounds(start_index) || !in_bounds(end_index - 1)) {
+    } else if (!in_bounds(start_index) || !in_bounds(end_index - 1)) {
         std::cerr << "We cannot erase the item because the start index "
                 << start_index << " or the (end index - 1) = "
                 << (end_index - 1) << " is out of bounds." << std::endl;
