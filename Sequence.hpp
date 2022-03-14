@@ -19,9 +19,17 @@ class Sequence {
 
      void insert(double element);
      void insert(double elements[], int size);
+
+     // Remove the element at the index
      void erase(int index);
+
+     // Remove the elements starting at start_index and ending at end_index
      void erase(int start_index, int end_index);
+
+     // Return the number of times the element appears in the sequence
      int count(double element);
+
+     // Return the first index of the element, else return -1 if not found
      int index_of(double element);
      int size();
      double sum();
