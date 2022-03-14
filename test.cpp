@@ -104,7 +104,8 @@ void eraseTest() {
     sq2.insert(numbers, n);
     sq2.insert(numbers, n);
     sq2.print();
-    sq2.erase(1, 6);
+    /* sq2.erase(1, 6); */
+    sq2.erase(6, 1);
     sq2.print();
     sq2.erase(0, 0);
     sq2.print();
