@@ -4,7 +4,7 @@
 using std::cout;
 using std::endl;
 
-void basicTest() {
+void basic_test() {
     Sequence sq1;
     double numbers[] = {1.1, 2.2, 3.3};
     int n = 3;
@@ -16,16 +16,16 @@ void basicTest() {
 
     int pies = sq1.count(3.14);
     cout << "pies = " << pies << endl;
-    int sqSize = sq1.size();
-    cout << "sqSize = " << sqSize << endl;
-    double sqSum = sq1.sum();
-    cout << "sqSum = " << sqSum << endl;
-    double sqMean = sq1.mean();
-    cout << "sqMean = " << sqMean << endl;
-    double sqMedian = sq1.median();
-    cout << "sqMedian = " << sqMedian << endl;
-    double sqStddev = sq1.stddev();
-    cout << "sqStddev = " << sqStddev << endl;
+    int sq_size = sq1.size();
+    cout << "sq_size = " << sq_size << endl;
+    double sq_sum = sq1.sum();
+    cout << "sq_sum = " << sq_sum << endl;
+    double sq_mean = sq1.mean();
+    cout << "sq_mean = " << sq_mean << endl;
+    double sq_median = sq1.median();
+    cout << "sq_median = " << sq_median << endl;
+    double sq_stddev = sq1.stddev();
+    cout << "sq_stddev = " << sq_stddev << endl;
 
     Sequence sq2(sq1);
     Sequence sq3 = sq2.concatenate(sq1);
@@ -42,7 +42,12 @@ void basicTest() {
     cout << "end basic test" << endl;
 }
 
-void equalityTest() {
+void check_equality(const Sequence& sq1, const Sequence& sq2) {
+    cout << "sq1 == sq2 ? " << (sq1 == sq2) << endl;
+    cout << "sq1 != sq2 ? " << (sq1 != sq2) << endl;
+}
+
+void equality_test() {
     Sequence sq1;
     double numbers[] = {3.14, 1.1, 2.2, 3.3};
     int n = 4;
@@ -52,15 +57,13 @@ void equalityTest() {
     sq1.print();
     sq2.print();
 
-    cout << "sq1 == sq2 ? " << (sq1 == sq2) << endl;
-    cout << "sq1 != sq2 ? " << (sq1 != sq2) << endl;
+    check_equality(sq1, sq2);
 
     double num = 10.1;
     sq1.insert(num);
     cout << "inserted " << num << " into sq1" << endl;
 
-    cout << "sq1 == sq2 ? " << (sq1 == sq2) << endl;
-    cout << "sq1 != sq2 ? " << (sq1 != sq2) << endl;
+    check_equality(sq1, sq2);
 
     cout << "sq2 == sq2 ? " << (sq2 == sq2) << endl;
     cout << "sq2 != sq2 ? " << (sq2 != sq2) << endl;
@@ -68,7 +71,7 @@ void equalityTest() {
     cout << "end equality test" << endl;
 }
 
-void eraseTest() {
+void erase_test() {
     Sequence sq1;
     double numbers[] = {1.1, 2.2, 3.3};
     int n = 3;
@@ -109,12 +112,14 @@ void eraseTest() {
     sq2.print();
     sq2.erase(0, 0);
     sq2.print();
+
+    cout << "end erase test" << endl;
 }
 
 int main() {
-    basicTest();
+    basic_test();
     cout << endl;
-    equalityTest();
+    equality_test();
     cout << endl;
-    eraseTest();
+    erase_test();
 }
