@@ -80,8 +80,8 @@ void Sequence::insert(double elements[], int size) {
 
     for (int i = currSize, j = 0; i < newCurrSize; i++, j++) {
         arr[i] = elements[j];
-        currSize++;
     }
+    currSize = newCurrSize;
 }
 
 bool Sequence::in_bounds(int index) {
