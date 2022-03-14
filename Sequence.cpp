@@ -84,8 +84,15 @@ void Sequence::insert(double elements[], int size) {
     }
 }
 
-void Sequence::erase(int index) {
+bool Sequence::in_bounds(int index) {
     if (index < 0 || index >= currSize) {
+        return false;
+    }
+    return true;
+}
+
+void Sequence::erase(int index) {
+    if (!in_bounds(index)) {
         std::cerr << "We cannot erase the item because the index " << index
                 << " is out of bounds." << std::endl;
         return;
@@ -94,6 +101,23 @@ void Sequence::erase(int index) {
         arr[i] = arr[i + 1];
     }
     currSize--;
+}
+
+void Sequence::erase(int start_index, int end_index) {
+    if (start_index == end_index) {
+        erase(start_index);
+        return;
+    }
+    if (!in_bounds(start_index) || !in_bounds(end_index - 1)) {
+        std::cerr << "We cannot erase the item because the start index "
+                << start_index << " or the (end index - 1) = "
+                << (end_index - 1) << " is out of bounds." << std::endl;
+        return;
+    }
+    for (int i = start_index; i < end_index - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    currSize -= end_index - start_index;
 }
 
 int Sequence::count(double element) {
@@ -156,6 +180,12 @@ double Sequence::stddev() {
 }
 
 Sequence Sequence::concatenate(const Sequence& seq) {
+    /*
+    Sequence* newSeq = new Sequence();
+    newSeq->insert(arr, currSize);
+    newSeq->insert(seq.arr, seq.currSize);
+    return *newSeq;
+    */
     insert(seq.arr, seq.currSize);
     return *this;
 }

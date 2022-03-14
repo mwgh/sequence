@@ -7,6 +7,8 @@ class Sequence {
      int maxSize;
      int currSize;
 
+     bool in_bounds(int index);
+
  public:
      Sequence();
      Sequence(const Sequence& seq);
@@ -18,6 +20,7 @@ class Sequence {
      void insert(double element);
      void insert(double elements[], int size);
      void erase(int index);
+     void erase(int start_index, int end_index);
      int count(double element);
      int index_of(double element);
      int size();
