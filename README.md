@@ -1,1 +1,4 @@
-Implementation of Resizable array
+sequence
+--------
+
+Implementation of linear & resizable abstract data type
