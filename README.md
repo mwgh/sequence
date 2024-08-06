@@ -1,4 +1,4 @@
 sequence
 --------
 
-Implementation of linear & resizable abstract data type like a C++ vector
+Extremely basic implementation of sequence (similar to C++ vector)
