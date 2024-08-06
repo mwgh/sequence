@@ -1,4 +1,4 @@
 sequence
 --------
 
-Extremely basic implementation of sequence (similar to C++ vector)
+Similar to a C++ vector and storage is with an array
