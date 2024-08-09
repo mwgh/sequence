@@ -102,8 +102,6 @@ void Sequence::erase(int index) {
     }
     currSize--;
 
-    // Set the former last element in the sequence to 0 so that == and !=
-    // do not have problems.
     arr[currSize] = 0;
 }
 
@@ -126,8 +124,6 @@ void Sequence::erase(int start_index, int end_index) {
     }
     currSize -= end_index - start_index;
 
-    // Set the remaining part of the array to 0 so that == and !=
-    // do not have problems.
     for (int i = currSize; i < maxSize; i++) {
         arr[i] = 0;
     }
